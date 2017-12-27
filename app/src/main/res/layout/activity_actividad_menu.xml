@@ -4,22 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/degradado_fondo"
+    android:minHeight="250dp"
     tools:context="com.osito.osoyoga.ActividadMenu">
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="551dp"
+        android:layout_width="0dp"
+        android:layout_height="590dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center_horizontal|center"
         android:orientation="vertical"
-        android:weightSum="1"
-        android:background="@drawable/degradado_fondo"
-        tools:layout_editor_absoluteX="8dp"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="158dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_weight="1.44"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -31,7 +35,7 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/texto_oso" />
         </LinearLayout>
@@ -39,37 +43,57 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="367dp"
-            android:gravity="center_horizontal"
+            android:gravity="center_vertical|center_horizontal"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/bResp"
                 android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp"
-                android:text="@string/respiraciones" />
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botones_esquinas_redondeadas"
+                android:fontFamily="casual"
+                android:text="@string/respiraciones"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/bMud"
                 android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:text="@string/mudras" />
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botones_esquinas_redondeadas"
+                android:fontFamily="casual"
+                android:text="@string/mudras"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/bPost"
                 android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                android:text="@string/posturas" />
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botones_esquinas_redondeadas"
+                android:fontFamily="casual"
+                android:text="@string/posturas"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/bRut"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botones_esquinas_redondeadas"
+                android:fontFamily="casual"
+                android:text="@string/rutinas"
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/bSalir"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="@string/salir" />
+                android:layout_height="40dp"
+                android:background="@drawable/botones_esquinas_redondeadas"
+                android:fontFamily="casual"
+                android:text="@string/salir"
+                android:textSize="12sp" />
         </LinearLayout>
 
     </LinearLayout>
