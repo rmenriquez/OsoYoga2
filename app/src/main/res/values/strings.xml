@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">OsoYoga</string>
+    <string name="respiraciones">Respiraciones</string>
+    <string name="mudras">Mudras</string>
+    <string name="posturas">posturas</string>
+    <string name="rutinas">Rutinas</string>
+    <string name="salir">Salir</string>
+    <string name="confirmarSalir">¿Salir de la aplicación?</string>
+    <string name="presionaSiSalir">Pulsa \"Si\" para salir</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="benef">Beneficios</string>
+    <string name="instruc">Pasos</string>
+
+
+</resources>

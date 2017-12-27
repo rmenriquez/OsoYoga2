@@ -1,0 +1,21 @@
+<resources>
+    <string name="N_mudra_1">Linga mudra</string>
+    <string name="B_mudra_1">Aumenta el calor corporal, Alivia la tos, Elimina el estrenimiento</string>
+    <string name="P_mudra_1">Coloque las manos como se muestra en la imagen sobre sus rodillas mientras se sienta con la espalda recta</string>
+
+    <string name="N_mudra_2">Jnana mudra</string>
+    <string name="B_mudra_2">Posibilita la concentracion al meditar, Aumenta la memoria y la inteligencia, Produce calma y serenidad</string>
+    <string name="P_mudra_2">Coloque las manos como se muestra en la imagen sobre sus rodillas mientras se sienta con la espalda recta</string>
+
+    <string name="N_mudra_3">Shunya mudra</string>
+    <string name="B_mudra_3">Reduce el exceso de grasa en el cuerpo, Revitaliza el sistema nervioso, Fomenta la creatividad</string>
+    <string name="P_mudra_3">Coloque las manos como se muestra en la imagen sobre sus rodillas mientras se sienta con la espalda recta</string>
+
+    <string name="N_mudra_4">Prana mudra</string>
+    <string name="B_mudra_4">Aumenta la energia pranica, Fomenta una mejor salud, Mejora la vista debil</string>
+    <string name="P_mudra_4">Coloque las manos como se muestra en la imagen sobre sus rodillas mientras se sienta con la espalda recta</string>
+
+
+
+
+</resources>

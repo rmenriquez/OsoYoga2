@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.osito.osoyoga.MainActivity">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="551dp"
+        android:background="@android:color/background_light"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:background="@android:color/background_light"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="158dp"
+            android:layout_weight="1.44"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/log_oso" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/texto_oso" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="367dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bResp"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp"
+                android:text="@string/respiraciones" />
+
+            <Button
+                android:id="@+id/bMud"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/mudras" />
+
+            <Button
+                android:id="@+id/bPost"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/posturas" />
+
+            <Button
+                android:id="@+id/bSalir"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/salir" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
