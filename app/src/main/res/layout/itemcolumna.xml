@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/degradado_fondo"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -16,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_margin="@dimen/itemmargin"
+            android:fontFamily="casual"
             android:text="TextView"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
@@ -24,12 +26,14 @@
             android:layout_width="match_parent"
             android:layout_height="257dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/itemmargin"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             app:srcCompat="@drawable/i_mudra_1" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:orientation="horizontal">
 
             <Button
@@ -37,6 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/botones_esquinas_redondeadas"
+                android:fontFamily="casual"
                 android:text="Iniciar" />
 
             <Button
@@ -44,6 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/botones_esquinas_redondeadas"
+                android:fontFamily="casual"
                 android:text="Siguiente" />
         </LinearLayout>
 
@@ -63,6 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/itemmargin"
+                android:fontFamily="casual"
                 android:text="TextView"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
                 tools:text="@string/instruc" />

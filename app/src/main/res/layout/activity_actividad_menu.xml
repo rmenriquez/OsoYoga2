@@ -11,7 +11,6 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="590dp"
-        android:layout_marginStart="8dp"
         android:gravity="center_horizontal|center"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
