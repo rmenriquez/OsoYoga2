@@ -13,6 +13,8 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -94,6 +96,59 @@ public class ActividadMenu extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        super.onCreateOptionsMenu( menu );
+        this.getMenuInflater().inflate(R.menu.actions_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem)
+    {
+        boolean toret = false;
+        switch (menuItem.getItemId()){
+            case R.id.resp:
+
+                break;
+            case R.id.mud:
+
+                break;
+            case R.id.post:
+
+                break;
+            case R.id.rut:
+
+                break;
+            case R.id.salir:
+                AlertDialog.Builder mensajeConfirmacion = new AlertDialog.Builder(ActividadMenu.this);
+                mensajeConfirmacion.setTitle(R.string.confirmarSalir);
+                mensajeConfirmacion.setMessage(R.string.presionaSiSalir);
+
+                mensajeConfirmacion.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+
+                mensajeConfirmacion.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog alertDialog = mensajeConfirmacion.create();
+                alertDialog.show();
+                break;
+        }
+        return toret;
+    }
+
     @Override
     public void onPause(){
         super.onPause();
