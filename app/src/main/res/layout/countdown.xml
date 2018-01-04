@@ -25,13 +25,25 @@
             tools:layout_editor_absoluteX="154dp"
             tools:layout_editor_absoluteY="214dp" />
 
-        <Button
+        <ToggleButton
             android:id="@+id/inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/botones_esquinas_redondeadas"
+            android:fontFamily="casual"
+            android:textOn="@string/start"
+            android:textOff="@string/stop"
+            tools:layout_editor_absoluteX="169dp"
+            tools:layout_editor_absoluteY="291dp" />
+
+        <Button
+            android:id="@+id/boton_parar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/botones_esquinas_redondeadas"
             android:fontFamily="casual"
-            android:text="Start"
+            android:text="@string/pause"
             tools:layout_editor_absoluteX="169dp"
             tools:layout_editor_absoluteY="291dp" />
 

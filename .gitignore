@@ -4,3 +4,17 @@
 .idea/misc.xml
 
 .idea/workspace.xml
+
+*.rawproto
+
+build/android-profile/profile-2018-01-04-10-19-36-007.json
+
+.gradle/4.1/taskHistory/taskHistory.lock
+
+.gradle/4.1/taskHistory/taskHistory.bin
+
+.gradle/4.1/taskHistory/fileSnapshots.bin
+
+.gradle/4.1/javaCompile/taskHistory.bin
+
+.gradle/4.1/javaCompile/javaCompile.lock

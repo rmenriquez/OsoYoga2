@@ -11,6 +11,10 @@
     <string name="no">No</string>
     <string name="benef">Beneficios</string>
     <string name="instruc">Pasos</string>
+    <string name="beneficispasos">Beneficios y pasos</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pausa</string>
 
 
 </resources>

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.pm.ActivityInfo;
 
 public class CountdownActivity extends AppCompatActivity {
 
@@ -23,6 +24,9 @@ public class CountdownActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.countdown);
+
+        //Para que no se pueda cambiar la orientación y no tener que pausarla ni almacenar la orientación.
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
 
         countdownText=(TextView) findViewById(R.id.time_text);
         countdownBotton=(Button) findViewById(R.id.inicio);
@@ -93,7 +97,15 @@ public class CountdownActivity extends AppCompatActivity {
         countdownText.setText(timeLeftText);
     }
 
+    @Override
+    public void onPause(){
+        super.onPause();
+    }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
 
 }
 
