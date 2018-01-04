@@ -4,18 +4,22 @@ package com.osito.osoyoga;
  * Created by RaquelMarcos on 27/12/17.
  */
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 
 public class CountdownActivity extends AppCompatActivity {
 
     private TextView countdownText;
     private Button countdownBotton;
+    private Button stopButton;
+    TareaCronometro tareaCronometro;
 
     private CountDownTimer countDownTimer;
     private long timeLeft=600000; //10 minutos
@@ -25,11 +29,14 @@ public class CountdownActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.countdown);
 
-        //Para que no se pueda cambiar la orientación y no tener que pausarla ni almacenar la orientación.
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
-
         countdownText=(TextView) findViewById(R.id.time_text);
         countdownBotton=(Button) findViewById(R.id.inicio);
+        stopButton=(Button) findViewById(R.id.boton_parar);
+
+        //Para no detectar el movimiento de la pantalla y tener que guardar
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+
+        tareaCronometro = new TareaCronometro();
 
         countdownBotton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,8 +46,6 @@ public class CountdownActivity extends AppCompatActivity {
         });
 
     }
-
-
 
     public void startStop(){
         if(timerRunning){
@@ -108,4 +113,6 @@ public class CountdownActivity extends AppCompatActivity {
     }
 
 }
+
+class TareaCronometro extends AsyncTask<Void, String, Void>
 
