@@ -15,7 +15,7 @@
         <TextView
             android:id="@+id/titulo"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:layout_margin="@dimen/itemmargin"
             android:fontFamily="casual"
             android:text="TextView"
@@ -56,13 +56,6 @@
                 android:text="Siguiente" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/comentario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -75,24 +68,40 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/beneficispasos"
                 android:fontFamily="casual"
+                android:text="@string/beneficispasos"
                 android:textSize="24sp" />
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/pasos"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/itemmargin"
-                    android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                    tools:text="@string/instruc" />
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/comentario"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:fontFamily="casual"
+                        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+
+                    <TextView
+                        android:id="@+id/pasos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/itemmargin"
+                        android:fontFamily="casual"
+                        android:text="TextView"
+                        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                        tools:text="@string/instruc" />
+                </LinearLayout>
             </ScrollView>
+
         </LinearLayout>
 
     </LinearLayout>

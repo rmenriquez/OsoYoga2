@@ -4,7 +4,7 @@ package com.osito.osoyoga;
  * Created by RaquelMarcos on 27/12/17.
  */
 
-import android.os.AsyncTask;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -12,14 +12,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
+import android.widget.Toast;
 
 public class CountdownActivity extends AppCompatActivity {
 
     private TextView countdownText;
     private Button countdownBotton;
     private Button stopButton;
-    TareaCronometro tareaCronometro;
+    private int time;
+    private String tiempoRestanteTexto;
+    private String preferencias1;
+    long preferencias2;
+    private String tiempoRestantePrueba;
 
     private CountDownTimer countDownTimer;
     private long timeLeft=600000; //10 minutos
@@ -33,11 +37,6 @@ public class CountdownActivity extends AppCompatActivity {
         countdownBotton=(Button) findViewById(R.id.inicio);
         stopButton=(Button) findViewById(R.id.boton_parar);
 
-        //Para no detectar el movimiento de la pantalla y tener que guardar
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
-
-        tareaCronometro = new TareaCronometro();
-
         countdownBotton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,19 +44,22 @@ public class CountdownActivity extends AppCompatActivity {
             }
         });
 
+        stopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                stopTimer();
+            }
+        });
+
     }
 
     public void startStop(){
         if(timerRunning){
-            stopTimer();
+            pauseTimer();
         }else{
             startTimer();
         }
     }
-
-
-
-
 
     public void startTimer(){
         countDownTimer = new CountDownTimer(timeLeft, 1000) {
@@ -78,14 +80,20 @@ public class CountdownActivity extends AppCompatActivity {
         timerRunning= true;
     }
 
-    public void stopTimer(){
+    public void pauseTimer(){
         countDownTimer.cancel();
-        countdownBotton.setText("START");
         timerRunning=false;
-
+        countdownBotton.setText("START");
     }
 
-
+    public void stopTimer(){
+        if(timerRunning){
+            countDownTimer.cancel();
+            timerRunning = false;
+        }
+        timeLeft = 600000;
+        updateTimer();
+    }
 
     public void updateTimer(){
         int min=(int) timeLeft/60000;
@@ -98,21 +106,37 @@ public class CountdownActivity extends AppCompatActivity {
         if(sec<10) timeLeftText += "0";
         timeLeftText+=sec;
 
-
+        tiempoRestantePrueba = timeLeftText;
         countdownText.setText(timeLeftText);
     }
 
     @Override
     public void onPause(){
         super.onPause();
+        if(timerRunning){
+            pauseTimer();
+        }
+        tiempoRestanteTexto = ""+timeLeft;
+        SharedPreferences prefs = getSharedPreferences("preferenciasCronometro", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("Tiemporestantetexto", tiempoRestantePrueba);
+        editor.putLong("Tiemporestantenum", timeLeft);
+        editor.commit();
+
     }
 
     @Override
     public void onResume(){
         super.onResume();
+        SharedPreferences prefs = getSharedPreferences("preferenciasCronometro", Context.MODE_PRIVATE);
+        preferencias1 = prefs.getString("Tiemporestantetexto", "10:00");
+        preferencias2 = prefs.getLong("Tiemporestantenum", 60000);
+        timeLeft = preferencias2;
+        updateTimer();
+        countdownText.setText(preferencias1);
+
     }
 
 }
 
-class TareaCronometro extends AsyncTask<Void, String, Void>
 
