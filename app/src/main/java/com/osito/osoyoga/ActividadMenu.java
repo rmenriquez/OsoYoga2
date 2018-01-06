@@ -60,10 +60,9 @@ public class ActividadMenu extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(getApplicationContext(), PosturaActivity.class);
-                ActividadMenu.this.startActivityForResult(intent, CUARTA_ACTIVIDAD);            }
+                ActividadMenu.this.startActivityForResult(intent, CUARTA_ACTIVIDAD);
+            }
         });
-
-
 
         //BOTÓN SALIR
         final Button botonSalir = (Button) findViewById(R.id.bSalir);
@@ -95,58 +94,6 @@ public class ActividadMenu extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        super.onCreateOptionsMenu( menu );
-        this.getMenuInflater().inflate(R.menu.actions_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem)
-    {
-        boolean toret = false;
-        switch (menuItem.getItemId()){
-            case R.id.resp:
-
-                break;
-            case R.id.mud:
-
-                break;
-            case R.id.post:
-
-                break;
-            case R.id.rut:
-
-                break;
-            case R.id.salir:
-                AlertDialog.Builder mensajeConfirmacion = new AlertDialog.Builder(ActividadMenu.this);
-                mensajeConfirmacion.setTitle(R.string.confirmarSalir);
-                mensajeConfirmacion.setMessage(R.string.presionaSiSalir);
-
-                mensajeConfirmacion.setPositiveButton(R.string.si, new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                });
-
-                mensajeConfirmacion.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                AlertDialog alertDialog = mensajeConfirmacion.create();
-                alertDialog.show();
-                break;
-        }
-        return toret;
     }
 
     @Override

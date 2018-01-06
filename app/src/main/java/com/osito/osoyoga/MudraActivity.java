@@ -12,7 +12,7 @@ import android.widget.TextView;
  * Created by RaquelMarcos on 27/12/17.
  */
 
-public class MudraActivity extends AppCompatActivity {
+public class MudraActivity extends MenuOpciones {
 
     private final String TAG="MudraActivity";
     private static final int SEGUNDA_ACTIVIDAD = 2;
