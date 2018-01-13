@@ -24,13 +24,26 @@ public class ActividadMenu extends AppCompatActivity {
     private static final int TERCERA_ACTIVIDAD = 3;
     private static final int CUARTA_ACTIVIDAD = 4;
     private static final int QUINTA_ACTIVIDAD = 5;
-
+    private Button btnLogout;
+    private Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_menu);
 
+
+        session = new Session(this);
+        if(!session.loggedin()){
+            logout();
+        }
+        btnLogout = (Button)findViewById(R.id.btnLogout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
         ///BOTÓN RESPIRACIONES
         final Button botonResp = (Button) findViewById(R.id.bResp);
         botonResp.setOnClickListener(new View.OnClickListener(){
@@ -94,6 +107,7 @@ public class ActividadMenu extends AppCompatActivity {
                 alertDialog.show();
             }
         });
+
     }
 
     @Override
@@ -104,6 +118,13 @@ public class ActividadMenu extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
+    }
+
+
+    private void logout(){
+        session.setLoggedin(false);
+        finish();
+        startActivity(new Intent(ActividadMenu.this,LoginActivity.class));
     }
 
 }
