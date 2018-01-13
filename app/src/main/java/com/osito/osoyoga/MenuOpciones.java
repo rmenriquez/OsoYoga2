@@ -1,7 +1,9 @@
 package com.osito.osoyoga;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -16,6 +18,7 @@ public class MenuOpciones extends AppCompatActivity{
     private static final int SEGUNDA_ACTIVIDAD = 2;
     private static final int TERCERA_ACTIVIDAD = 3;
     private static final int CUARTA_ACTIVIDAD = 4;
+    private Session session;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -54,6 +57,13 @@ public class MenuOpciones extends AppCompatActivity{
 
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        //Con esto se genera un flag pata ir a la actividad principal y pasar un
+                        // boolean a ella para saber si tiene que salir. Como se le pasa true, al
+                        // llegar a la actividad principal sale de la app
+                        Intent intent = new Intent(getApplicationContext(), ActividadMenu.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.putExtra("Exit me", true);
+                        startActivity(intent);
                         finish();
                     }
                 });
@@ -67,6 +77,9 @@ public class MenuOpciones extends AppCompatActivity{
                 });
                 AlertDialog alertDialog = mensajeConfirmacion.create();
                 alertDialog.show();
+                break;
+            case R.id.logout:
+
                 break;
         }
         return toret;

@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.content.SharedPreferences;
 import android.widget.Toast;
 
-public class CountdownActivity extends AppCompatActivity {
+public class CountdownActivity extends MenuOpciones {
 
     private TextView countdownText;
     private Button countdownBotton;
@@ -90,6 +90,7 @@ public class CountdownActivity extends AppCompatActivity {
         if(timerRunning){
             countDownTimer.cancel();
             timerRunning = false;
+            countdownBotton.setText("START");
         }
         timeLeft = 600000;
         updateTimer();
@@ -106,7 +107,6 @@ public class CountdownActivity extends AppCompatActivity {
         if(sec<10) timeLeftText += "0";
         timeLeftText+=sec;
 
-        tiempoRestantePrueba = timeLeftText;
         countdownText.setText(timeLeftText);
     }
 
@@ -116,10 +116,8 @@ public class CountdownActivity extends AppCompatActivity {
         if(timerRunning){
             pauseTimer();
         }
-        tiempoRestanteTexto = ""+timeLeft;
         SharedPreferences prefs = getSharedPreferences("preferenciasCronometro", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("Tiemporestantetexto", tiempoRestantePrueba);
         editor.putLong("Tiemporestantenum", timeLeft);
         editor.commit();
 
@@ -128,12 +126,10 @@ public class CountdownActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        SharedPreferences prefs = getSharedPreferences("preferenciasCronometro", Context.MODE_PRIVATE);
-        preferencias1 = prefs.getString("Tiemporestantetexto", "10:00");
-        preferencias2 = prefs.getLong("Tiemporestantenum", 60000);
+        SharedPreferences prefs = getBaseContext().getSharedPreferences("preferenciasCronometro", Context.MODE_PRIVATE);
+        preferencias2 = prefs.getLong("Tiemporestantenum", 600000);
         timeLeft = preferencias2;
         updateTimer();
-        countdownText.setText(preferencias1);
 
     }
 

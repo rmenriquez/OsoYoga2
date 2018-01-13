@@ -8,8 +8,10 @@ package com.osito.osoyoga;
 
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +33,11 @@ public class ActividadMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_menu);
+
+        //Estructura de control para poder salir desde el menú de la app
+        if( getIntent().getBooleanExtra("Exit me", false)){
+            finish();
+        }
 
 
         session = new Session(this);
@@ -124,6 +131,11 @@ public class ActividadMenu extends AppCompatActivity {
     private void logout(){
         session.setLoggedin(false);
         finish();
+        SharedPreferences prefs = getSharedPreferences("preferenciasCronometro", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        //editor.putString("Tiemporestantetexto", "10:00");
+        editor.putLong("Tiemporestantenum", 600000);
+        editor.commit();
         startActivity(new Intent(ActividadMenu.this,LoginActivity.class));
     }
 
