@@ -18,7 +18,6 @@ public class MenuOpciones extends AppCompatActivity{
     private static final int SEGUNDA_ACTIVIDAD = 2;
     private static final int TERCERA_ACTIVIDAD = 3;
     private static final int CUARTA_ACTIVIDAD = 4;
-    private Session session;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -44,9 +43,6 @@ public class MenuOpciones extends AppCompatActivity{
             case R.id.post:
                 Intent intent3 = new Intent(getApplicationContext(), PosturaActivity.class);
                 MenuOpciones.this.startActivityForResult(intent3, CUARTA_ACTIVIDAD);
-                break;
-            case R.id.rut:
-
                 break;
             case R.id.salir:
                 AlertDialog.Builder mensajeConfirmacion = new AlertDialog.Builder(MenuOpciones.this);
@@ -78,10 +74,8 @@ public class MenuOpciones extends AppCompatActivity{
                 AlertDialog alertDialog = mensajeConfirmacion.create();
                 alertDialog.show();
                 break;
-            case R.id.logout:
-
-                break;
         }
         return toret;
     }
+
 }
